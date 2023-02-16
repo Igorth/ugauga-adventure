@@ -6,30 +6,32 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator playerAnim;
 
     [SerializeField]
-    private float movementSpeed = 3f;
+    private float movementSpeed = 10f;
     private string horizontalAxis = "Horizontal";
+    private string jump = "Jump";
+    private string runAnimationParam = "run";
+    private string groundedAnimationParam = "grounded";
+    private bool grounded;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        // Grab reference
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Moviment();
-
-        if (Input.GetKeyDown("space"))
-        {
-            rb.velocity = new Vector3(0,14,0);
-        }
+        Movement();
+        Jump();
     }
 
-    void Moviment()
+    void Movement()
     {
         float h = Input.GetAxisRaw(horizontalAxis);
 
@@ -38,14 +40,41 @@ public class PlayerMovement : MonoBehaviour
         if (h > 0)
         {
             tempPos.x += movementSpeed * Time.deltaTime;
+            sr.flipX = false; // Flip Player to right side
 
-            sr.flipX = false;
+            playerAnim.SetBool(runAnimationParam, true);
         }
         else if (h < 0)
         {
             tempPos.x -= movementSpeed * Time.deltaTime;
+            sr.flipX = true; // Flip Player to left side
+            playerAnim.SetBool(runAnimationParam, true);
+        }
+        else
+        {
+            playerAnim.SetBool(runAnimationParam, false);
+        }
 
-            sr.flipX = true;
+        playerAnim.SetBool(groundedAnimationParam, grounded);
+
+        transform.position = tempPos;
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown(jump))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, movementSpeed);
+            playerAnim.SetTrigger("jump");
+            grounded = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
         }
     }
 }
