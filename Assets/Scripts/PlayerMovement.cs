@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
 
     [SerializeField] private float movementSpeed = 10f;
+    [SerializeField] private float jumpPower;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
     private string horizontalAxis = "Horizontal";
-    private string jump = "Jump";
     private string runAnimationParam = "run";
     private string groundedAnimationParam = "grounded";
+    private float wallJumpCooldown;
+    private float horizontalInput;
 
     private void Awake()
     {
@@ -28,46 +31,69 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
-        Jump();
-    }
+        horizontalInput = Input.GetAxisRaw(horizontalAxis); 
 
-    void Movement()
-    {
-        float h = Input.GetAxisRaw(horizontalAxis);
-
-        Vector2 tempPos = transform.position;
-
-        if (h > 0)
+        // Flip Player when moving left or right
+        if (horizontalInput > 0.01f)
         {
-            tempPos.x += movementSpeed * Time.deltaTime;
-            sr.flipX = false; // Flip Player to right side
-
-            playerAnim.SetBool(runAnimationParam, true);
+            transform.localScale = Vector3.one;
         }
-        else if (h < 0)
+        else if (horizontalInput < -0.01f)
         {
-            tempPos.x -= movementSpeed * Time.deltaTime;
-            sr.flipX = true; // Flip Player to left side
-            playerAnim.SetBool(runAnimationParam, true);
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        // Set animator parameters
+        playerAnim.SetBool(runAnimationParam, horizontalInput != 0);
+        playerAnim.SetBool(groundedAnimationParam, isGrounded());
+
+        // Wall jump logic
+        if (wallJumpCooldown > 0.2f)
+        {
+            rb.velocity = new Vector2(horizontalInput * movementSpeed, rb.velocity.y);
+
+            if (onWall() && !isGrounded())
+            {
+                rb.gravityScale = 0;
+                rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                rb.gravityScale = 3;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Jump();
+            }
         }
         else
         {
-            playerAnim.SetBool(runAnimationParam, false);
+            wallJumpCooldown += Time.deltaTime;
         }
-
-        playerAnim.SetBool(groundedAnimationParam, isGrounded());
-
-        transform.position = tempPos;
     }
 
     void Jump()
     {
-        if (Input.GetButtonDown(jump))
+        if (isGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, movementSpeed);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             playerAnim.SetTrigger("jump");
         }
+        else if (onWall() && !isGrounded())
+        {
+            if (horizontalInput == 0)
+            {
+                rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
+                transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else
+            {
+                rb.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+            }
+            wallJumpCooldown = 0;
+        }
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -77,6 +103,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+
+        return raycastHit.collider != null;
+    }
+
+    private bool onWall()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
 
         return raycastHit.collider != null;
     }
