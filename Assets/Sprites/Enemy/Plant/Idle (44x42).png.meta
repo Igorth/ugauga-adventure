@@ -1,31 +1,40 @@
 fileFormatVersion: 2
-guid: e6fc6dc4e21030043abfa53d019c42ec
+guid: 326dd6eeaa0ca144ca01194dbacf63fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 567503552137126023
-    second: Spikes in (44x26)_0
+      213: 7059297670216363161
+    second: Idle (44x42)_0
   - first:
-      213: 8413887159364681965
-    second: Spikes in (44x26)_1
+      213: -6915562701434086438
+    second: Idle (44x42)_1
   - first:
-      213: -5132206593308845384
-    second: Spikes in (44x26)_2
+      213: 9056808379700724360
+    second: Idle (44x42)_2
   - first:
-      213: -1167082450651053415
-    second: Spikes in (44x26)_3
+      213: -7147979515874721190
+    second: Idle (44x42)_3
   - first:
-      213: 7149597647335768280
-    second: Spikes in (44x26)_4
+      213: 4697812028538531935
+    second: Idle (44x42)_4
   - first:
-      213: 6110803369164349898
-    second: Spikes in (44x26)_5
+      213: 30863249446853461
+    second: Idle (44x42)_5
   - first:
-      213: 1898844476723154255
-    second: Spikes in (44x26)_6
+      213: 1280757132483187777
+    second: Idle (44x42)_6
   - first:
-      213: 1883916774536352834
-    second: Spikes in (44x26)_7
+      213: 6339920940883149566
+    second: Idle (44x42)_7
+  - first:
+      213: 2352058606110595977
+    second: Idle (44x42)_8
+  - first:
+      213: -2315217716564799900
+    second: Idle (44x42)_9
+  - first:
+      213: -4258698599350678331
+    second: Idle (44x42)_10
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -71,7 +80,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -141,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spikes in (44x26)_0
+      name: Idle (44x42)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c1104f25216cb948bc85d5accb3999c
-      internalID: 567503552137126023
+      spriteID: cd64023b42af444488e8e41dbfd39a4e
+      internalID: 7059297670216363161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_1
+      name: Idle (44x42)_1
       rect:
         serializedVersion: 2
         x: 44
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b01e66c75e736e742b342bb733efb916
-      internalID: 8413887159364681965
+      spriteID: c9e1471731a83a44fb8ba4824308e4a9
+      internalID: -6915562701434086438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_2
+      name: Idle (44x42)_2
       rect:
         serializedVersion: 2
         x: 88
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3200eadad7ddb647bffaf77214adfde
-      internalID: -5132206593308845384
+      spriteID: aa2b142312a18f84d968ca4a0961f0e9
+      internalID: 9056808379700724360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_3
+      name: Idle (44x42)_3
       rect:
         serializedVersion: 2
         x: 132
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3f54469530d6c84ea48a752211f1cf7
-      internalID: -1167082450651053415
+      spriteID: fe10130b80561b84ebd155bc6eb941c7
+      internalID: -7147979515874721190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_4
+      name: Idle (44x42)_4
       rect:
         serializedVersion: 2
         x: 176
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e2e82dda5269c42aa5c3458adcd146
-      internalID: 7149597647335768280
+      spriteID: bf2e4c7b69ed5204981a99d29ab8b2cd
+      internalID: 4697812028538531935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_5
+      name: Idle (44x42)_5
       rect:
         serializedVersion: 2
         x: 220
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e179fb4508c331459c45b64af91533d
-      internalID: 6110803369164349898
+      spriteID: 3692925bfb3ea074785cbcd18beb6c85
+      internalID: 30863249446853461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_6
+      name: Idle (44x42)_6
       rect:
         serializedVersion: 2
         x: 264
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 500544887e031da48981f65ef593e3d7
-      internalID: 1898844476723154255
+      spriteID: db2496febc5e15e49afec210c94a89b4
+      internalID: 1280757132483187777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes in (44x26)_7
+      name: Idle (44x42)_7
       rect:
         serializedVersion: 2
         x: 308
         y: 0
         width: 44
-        height: 26
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,8 +311,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fb18cf92024f524f964345e7a7e437e
-      internalID: 1883916774536352834
+      spriteID: e97f599348f886f438416e06fe418e0a
+      internalID: 6339920940883149566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (44x42)_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45b7be50548dff468248130481fddd6
+      internalID: 2352058606110595977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (44x42)_9
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cce2c4ad0b7e04dae41dd1d4475615
+      internalID: -2315217716564799900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (44x42)_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f3e26981c02e149a92b1aa82b86c06
+      internalID: -4258698599350678331
       vertices: []
       indices: 
       edges: []
@@ -319,14 +391,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spikes in (44x26)_3: -1167082450651053415
-      Spikes in (44x26)_7: 1883916774536352834
-      Spikes in (44x26)_2: -5132206593308845384
-      Spikes in (44x26)_5: 6110803369164349898
-      Spikes in (44x26)_0: 567503552137126023
-      Spikes in (44x26)_1: 8413887159364681965
-      Spikes in (44x26)_4: 7149597647335768280
-      Spikes in (44x26)_6: 1898844476723154255
+      Idle (44x42)_2: 9056808379700724360
+      Idle (44x42)_8: 2352058606110595977
+      Idle (44x42)_5: 30863249446853461
+      Idle (44x42)_10: -4258698599350678331
+      Idle (44x42)_4: 4697812028538531935
+      Idle (44x42)_9: -2315217716564799900
+      Idle (44x42)_3: -7147979515874721190
+      Idle (44x42)_1: -6915562701434086438
+      Idle (44x42)_0: 7059297670216363161
+      Idle (44x42)_7: 6339920940883149566
+      Idle (44x42)_6: 1280757132483187777
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
