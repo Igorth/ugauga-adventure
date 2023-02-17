@@ -7,14 +7,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator playerAnim;
+    private BoxCollider2D boxCollider;
 
-    [SerializeField]
-    private float movementSpeed = 10f;
+    [SerializeField] private float movementSpeed = 10f;
+    [SerializeField] private LayerMask groundLayer;
     private string horizontalAxis = "Horizontal";
     private string jump = "Jump";
     private string runAnimationParam = "run";
     private string groundedAnimationParam = "grounded";
-    private bool grounded;
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         playerAnim = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnim.SetBool(runAnimationParam, false);
         }
 
-        playerAnim.SetBool(groundedAnimationParam, grounded);
+        playerAnim.SetBool(groundedAnimationParam, isGrounded());
 
         transform.position = tempPos;
     }
@@ -66,15 +67,17 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, movementSpeed);
             playerAnim.SetTrigger("jump");
-            grounded = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = true;
-        }
+    }
+
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+
+        return raycastHit.collider != null;
     }
 }
