@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    // Check if the fireball will hit any objects
     private void OnTriggerEnter2D(Collider2D collision)
     {
         hit = true;
