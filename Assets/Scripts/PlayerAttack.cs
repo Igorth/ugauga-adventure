@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        playerAnim.SetTrigger("attack");
+        playerAnim.SetTrigger("sword");
         cooldownTimer = 0;
 
         // Pooling Fireballs
