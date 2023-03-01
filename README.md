@@ -6,7 +6,12 @@ Unity 2D Game
 In development
 
 ## What I learned during this process:
-
+- Position traps;
+- iFrames;
+- Shooting;
+- Following the Camera;
+- Create levels;
+- Health player;
 
 
 ## Setup
