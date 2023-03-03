@@ -15,10 +15,14 @@ public class Door : MonoBehaviour
             if (collision.transform.position.x < transform.position.x)
             {
                 cam.MoveToNewRoom(nextRoom);
+                nextRoom.GetComponent<Room>().Activateroom(true);
+                previousRoom.GetComponent<Room>().Activateroom(false);
             }
             else
             {
                 cam.MoveToNewRoom(previousRoom);
+                previousRoom.GetComponent<Room>().Activateroom(true);
+                nextRoom.GetComponent<Room>().Activateroom(false);
             }
         }
     }
